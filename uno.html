@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+ 
+    <!-- import the webpage's stylesheet -->
+     <link rel="stylesheet" href="./style.css" />
+    
+     <script src="./script.js"></script>
+     <!-- import the latest version of hydra synth-->
+     <script src="https://unpkg.com/hydra-synth"></script>
+     <script src="../p5.min.js"></script>
+     <!-- <script src="../addons/p5.sound.js"></script> -->
+     <script src="./script.js"></script>
+</head>
+<body>
+
+<a href="./dos.html"><p id="p">click</p></a>
+
+  <canvas >
+    <script>
+
+
+var hydra = new Hydra({
+    canvas: document.getElementById("myCanvas"),
+    detectAudio: false,
+    enableStreamCapture: false,
+  })
+
+
+a = ()=>mouse.x*0.003;
+b = () => 0.137 * time;
+c = ()=>mouse.y*0.003;
+d = ()=>a.fft[0]
+e = ()=>Math.random()
+f = () => 0.137 * time;
+s1.initVideo("https://va.media.tumblr.com/tumblr_scrcttu99W1anffkk.mp4")
+src(s1).modulate(noise(3)).out(o1)
+noise(2.0, 5.0, 0.3).rotate(d).diff(osc(100,0.25,0.25).hue(a)).mult(osc(f).rotate(a))
+  .modulateKaleid(osc(e),1)
+  .modulateScale(noise(4),a)
+  .modulateScrollY(osc(e)).
+blend(src(s1),c).out(o0)
+
+</script>
+</canvas>
+
+    
+</body>
+</html>

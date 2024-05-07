@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script src="./script.js"></script>
+ 
+    <!-- import the webpage's stylesheet -->
+     <link rel="stylesheet" href="./style.css" />
+    
+     <script src="./script1.js"></script>
+     <!-- import the latest version of hydra synth-->
+     <script src="https://unpkg.com/hydra-synth"></script>
+     <script src="../p5.min.js"></script>
+     <!-- <script src="../addons/p5.sound.js"></script> -->
+     <script src="./script.js"></script>
+</head>
+  
+<body> 
+    
+  <div id="dialog-confirm" title="HEY!!">
+    <p>KEEP ON GOING OR RUN OUT FROM HERE</p>
+</div>
+
+<h1 id="moveOn">SUPER TAPESTRY</h1> <!-- Replace the form with an h1 element -->
+
+<script>
+    $(function() {
+        $("#dialog-confirm").dialog({
+            resizable: false,
+            height: 190,
+            autoOpen: false,
+            width: 330,
+            modal: true,
+            buttons: {
+                "stay": function() {
+                    // Perform any actions here if needed
+        
+                    $(this).dialog("close");
+                },
+                "leave": function() {
+                  window.location.href = "./uno.html";
+                }
+            }
+        });
+
+        $('#moveOn').on('click', function(e) {
+            $("#dialog-confirm").dialog('open');
+        });
+    });
+</script>
+   
+<audio autoplay>
+  <source src="./canciones/1.wav">
+</audio>
+    
+  <script>
+    const playSound = function() {
+        document.getElementById('audioelement').play();
+        document.removeEventListener('click', playSound);
+    }
+    document.addEventListener('click', playSound);
+    </script>
+
+
+<canvas >
+    <script>
+
+var hydra = new Hydra({
+    canvas: document.getElementById("myCanvas"),
+    detectAudio: false,
+    enableStreamCapture: false,
+  })
+
+  a = ()=>mouse.x*0.003;
+b = () => 0.137 / time;
+f = () => 0.137 * time;
+c = ()=>mouse.y*0.003;
+d = ()=>a.fft[0]
+e = ()=>Math.random()
+noise(2.0, 5.0, 0.3).rotate(d).diff(osc(100,0.25,0.25).hue(a)).mult(osc(f).colorama(f,e,a).rotate(a))
+  .modulateKaleid(osc(e),1)
+  .modulateScale(noise(4),a)
+  .modulateScrollY(osc(b)).out(o0)
+
+</script>
+</canvas>
+
+
+    
+</body>
+</html>
