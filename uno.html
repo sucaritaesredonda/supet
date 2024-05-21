@@ -16,7 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
  
-    <!-- import the webpage's stylesheet -->
+<script src="./script2.js"></script>
+
+<!-- import the webpage's stylesheet -->
      <link rel="stylesheet" href="./style.css" />
     
      <script src="./script.js"></script>
@@ -25,10 +27,35 @@
      <script src="../p5.min.js"></script>
      <!-- <script src="../addons/p5.sound.js"></script> -->
      <script src="./script.js"></script>
+     
+
 </head>
 <body>
+  <audio autoplay>
+    <source src="./canciones/El Desierto Que Atraviezas final.wav">
+  </audio>
+      
+    <script>
+      const playSound = function() {
+          document.getElementById('audioelement').play();
+          document.removeEventListener('click', playSound);
+      }
+      document.addEventListener('click', playSound);
+      </script>
 
-<a href="./dos.html"><p id="p">click</p></a>
+  <header>
+    <div class="header__navigation">
+  
+  <a href="./index.html"><p id="p">GO BACK</p></a>
+<p id="p">PLAY </p>
+  <a href="./dos.html"><p id="p">GO FORWARD</p></a>
+      
+  
+  </div>
+  </header>
+
+
+
 
   <canvas >
     <script>

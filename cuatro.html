@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+<header>
+  <div class="header__navigation">
+
+<a href="./index.html"><p id="p">GO BACK</p></a>
+ <audio id="audio" src="./canciones/2.wav"></audio>
+<div id="bottom-right" onclick="togglePlayPause()"><p id="p">Play to sound</p></div>
+<a href="./dos.html"><p id="p">GO FORWARD</p></a>
+    
+
+</div>
+</header>
+
+<script>
+
+function togglePlayPause() {
+  var audio = document.getElementById("audio");
+  if (audio.paused) {
+    audio.play();
+    updatePlayStopText("Pause");
+  } else {
+    audio.pause();
+    updatePlayStopText("Play");
+  }
+}
+
+function updatePlayStopText(text) {
+  var playStopDiv = document.getElementById("bottom-right");
+  playStopDiv.innerHTML = text;
+}
+</script>
+
+  <canvas >
+    <script>
+</div>
+</body>
+</html>
